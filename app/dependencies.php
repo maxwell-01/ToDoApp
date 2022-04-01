@@ -34,9 +34,9 @@ return function (ContainerBuilder $containerBuilder) {
     };
 
     $container['toDoModel'] = DI\factory('\App\Factories\ToDoModelFactory');
-    $container['homePageController'] = DI\factory('\App\Factories\homePageController');
-    $container['newTaskController'] = DI\factory('\App\Factories\newTaskController');
-    $container['updateTaskController'] = DI\factory('\App\Factories\updateTaskController');
+    $container['homePageController'] = DI\factory('\App\Factories\HomePageControllerFactory');
+    $container['newTaskController'] = DI\factory('\App\Factories\NewTaskControllerFactory');
+    $container['updateTaskController'] = DI\factory('\App\Factories\UpdateTaskControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };

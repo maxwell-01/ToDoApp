@@ -13,11 +13,8 @@ class updateTaskController
 
     public function __invoke($request, $response, $args)
     {
-        // the request has a JSON body with data for a new student
-        $taskToUpdate = $response->getParseBody();
-        $taskName = $taskToUpdate['name'];
-        $taskStatus = $taskToUpdate['status'];
-        $this->toDoModel->updateTask($taskName, $taskStatus);
+        $taskId = $args['taskId'];
+        $this->toDoModel->updateTask($taskId);
 
         return $response->withHeader('Location', '/');
     }

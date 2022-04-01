@@ -13,11 +13,9 @@ class NewTaskController
 
     public function __invoke($request, $response, $args)
     {
-        // the request has a JSON body with data for a new student
-        $newTask = $response->getParseBody();
-        $taskName = $newTask['name'];
-        $taskStatus = $newTask['status'];
-        $this->toDoModel->createTask($taskName, $taskStatus);
+        $newTask = $request->getParsedBody();
+        $taskName = $newTask['taskname'];
+        $this->toDoModel->createTask($taskName);
 
         return $response->withHeader('Location', '/');
     }
