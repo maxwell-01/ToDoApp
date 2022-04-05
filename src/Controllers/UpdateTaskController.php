@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class updateTaskController
+class UpdateTaskController
 {
     protected $toDoModel;
 
